@@ -5,16 +5,6 @@
     "name": "obj_multi_client",
     "eventList": [
         {
-            "id": "59044469-cb69-4fbe-916a-d0c0cb26a10c",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 68,
-            "eventtype": 7,
-            "m_owner": "6dd22895-8953-4c4e-9bde-9e377e77423d"
-        },
-        {
             "id": "9f7a895c-989a-4088-8919-5202e4c5b002",
             "modelName": "GMEvent",
             "mvc": "1.0",
