@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "bcff2006-324c-4ff3-ac8f-d519e3b1ffea",
+            "Value": {
+                "id": "73f117e2-ea43-4c95-a232-08492b1672f6",
+                "resourcePath": "objects\\obj_multi_connection\\obj_multi_connection.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c1bb30c5-c5ae-40e9-b8d4-13531970ec3a",
             "Value": {
                 "id": "ea197224-74f4-440c-89a2-e97efbe9a94c",
