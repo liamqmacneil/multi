@@ -1,2 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
+var eventId = async_load[? "id"];
+
+//check if id is already indexed
