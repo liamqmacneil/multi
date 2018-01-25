@@ -8,4 +8,4 @@ enum multiAction {
 	C_DUCK
 }
 
-clientList = ds_map_create()
+playerList[4] = "";
