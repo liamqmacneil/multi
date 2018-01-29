@@ -5,7 +5,8 @@ enum multiAction {
 	C_JUMP,
 	C_LEFT,
 	C_RIGHT,
-	C_DUCK
+	C_DUCK,
+	C_NAME
 }
 
-playerList[4] = "";
+ds_map_create()
