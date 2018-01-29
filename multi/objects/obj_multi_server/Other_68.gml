@@ -39,6 +39,10 @@ switch (cmd) {
 		inst.action = multiAction.C_DUCK
 	break;
 	
+	case multiAction.C_STOP:
+		inst.action = multiAction.C_STOP
+	break;
+	
 	case multiAction.C_NAME:
 		inst.name = buffer_read(buff, buffer_string)
 	break;

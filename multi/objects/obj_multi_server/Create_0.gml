@@ -6,6 +6,7 @@ enum multiAction {
 	C_LEFT,
 	C_RIGHT,
 	C_DUCK,
+	C_STOP,
 	C_NAME
 }
 
