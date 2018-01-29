@@ -9,4 +9,6 @@ enum multiAction {
 	C_NAME
 }
 
-ds_map_create()
+DATA_BUFFER = buffer_create(256, buffer_grow,1)
+
+clients = ds_map_create()
