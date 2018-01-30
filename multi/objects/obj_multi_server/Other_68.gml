@@ -3,14 +3,14 @@ var type = async_load[? "type"] //get type of event
 
 
 if (server = eventId) {
-	if (type == network_type_connect) {
+	if (type = network_type_connect) {
 		var sock = async_load[? "socket"] //Get client ID
 		var ip	 = async_load[? "ip"]	  //Get client ip
 		var iid  = instance_create_layer(0,0,"players",obj_player)
 		ds_map_add(clients, sock, iid);
 	}
 
-	if (type == network_type_disconnect) {
+	if (type = network_type_disconnect) {
 		var sock = async_load[? "socket"] //Get client ID
 		var inst = clients[? sock]
 		ds_map_delete(clients, sock)

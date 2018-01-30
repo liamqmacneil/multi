@@ -20,15 +20,17 @@ if (ds_map_size(clients) > 0) {
 	show_debug_message(string(inst.y))
 	show_debug_message(string(inst.sprite_index))
 	
+	scr_multi_write_sprite_data(DATA_BUFFER,inst)
+	/*
 	buffer_write(DATA_BUFFER, buffer_s16, inst.x)
 	buffer_write(DATA_BUFFER, buffer_s16, inst.y)
-	buffer_write(DATA_BUFFER, buffer_s16, inst.sprite_index)
+	buffer_write(DATA_BUFFER, buffer_s16, inst.sprite_index)*/
 	}
 	
 	for (var i = 0; i < ds_list_size(global.multiInst); i++) {
 		var inst = ds_list_find_value(global.multiInst,i)
 		if (object_get_name(inst) != "obj_player") {
-			
+			scr_multi_write_sprite_data(DATA_BUFFER,inst)
 		}
 	}
 	
