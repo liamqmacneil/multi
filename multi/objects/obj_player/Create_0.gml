@@ -1,3 +1,4 @@
+event_inherited()
 action = noone
 grav = 0.5
 vsp = 0

@@ -25,6 +25,13 @@ if (ds_map_size(clients) > 0) {
 	buffer_write(DATA_BUFFER, buffer_s16, inst.sprite_index)
 	}
 	
+	for (var i = 0; i < ds_list_size(global.multiInst); i++) {
+		var inst = ds_list_find_value(global.multiInst,i)
+		if (object_get_name(inst) != "obj_player") {
+			
+		}
+	}
+	
 	first_id = ds_map_find_first(clients)
 	network_send_packet(first_id,DATA_BUFFER,buffer_tell(DATA_BUFFER))
 	while (!(is_undefined(ds_map_find_next(clients,first_id)))) {
