@@ -1,4 +1,4 @@
-show_debug_message("")
+
 if (ds_map_size(clients) > 0) {
 	
 
@@ -15,13 +15,7 @@ if (ds_map_size(clients) > 0) {
 	while (!(is_undefined(ds_map_find_next(clients,first_id)))) {
 	var first_id = ds_map_find_next(clients,first_id)
 	var inst = ds_map_find_value(clients,first_id)
-
-	
 	scr_multi_write_sprite_data(DATA_BUFFER,inst)
-	/*
-	buffer_write(DATA_BUFFER, buffer_s16, inst.x)
-	buffer_write(DATA_BUFFER, buffer_s16, inst.y)
-	buffer_write(DATA_BUFFER, buffer_s16, inst.sprite_index)*/
 	}
 	
 	for (var i = 0; i < ds_list_size(global.multiInst); i++) {
@@ -32,7 +26,9 @@ if (ds_map_size(clients) > 0) {
 	}
 	
 	first_id = ds_map_find_first(clients)
+	var buffLen = buffer_tell(DATA_BUFFER)
 	network_send_packet(first_id,DATA_BUFFER,buffer_tell(DATA_BUFFER))
+	
 	while (!(is_undefined(ds_map_find_next(clients,first_id)))) {
 		first_id = ds_map_find_next(clients,first_id)
 		network_send_packet(first_id,DATA_BUFFER,buffer_tell(DATA_BUFFER))

@@ -8,9 +8,7 @@ if (client == eventid) {
 		ds_list_clear(allsprites)
 		
 		for (var i = 0; i < sprites; i++) {
-			ds_list_add(allsprites, buffer_read(buff, buffer_s16)); //x
-			ds_list_add(allsprites, buffer_read(buff, buffer_s16)); //y
-			ds_list_add(allsprites, buffer_read(buff, buffer_s16)); //sprite_index
-
+			scr_multi_read_sprite_data(buff)
 		}
+		debugData = buffer_read(buff, buffer_string)
 }
