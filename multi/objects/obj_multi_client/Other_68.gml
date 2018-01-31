@@ -10,5 +10,4 @@ if (client == eventid) {
 		for (var i = 0; i < sprites; i++) {
 			scr_multi_read_sprite_data(buff)
 		}
-		debugData = buffer_read(buff, buffer_string)
 }

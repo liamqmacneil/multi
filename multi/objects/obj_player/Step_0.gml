@@ -12,6 +12,11 @@ switch (action) {
 			vsp = -20;
 		}
 	break;
+	
+	/*case multiAction.C_DUCK:
+		var iid = instance_create_depth(x,y,0,obj_bullet)
+		iid.image_angle = 45
+	break;*/
 }
 if (action != multiAction.C_JUMP && place_meeting(x,y+1,obj_wall)) {
 	if (hsp > 0) {
