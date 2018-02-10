@@ -26,32 +26,5 @@ if (server = eventId) {
 	for (var i = 0; i < actionNum; i++) {
 		ds_queue_enqueue(queID,buffer_read(buff,buffer_s16))
 	}
-
-
-	/*switch (cmd) {
-		case multiAction.C_LEFT:
-			inst.action = multiAction.C_LEFT
-		break;
-	
-		case multiAction.C_RIGHT:
-			inst.action = multiAction.C_RIGHT
-		break;
-	
-		case multiAction.C_JUMP:
-			inst.action = multiAction.C_JUMP
-		break;
-	
-		case multiAction.C_DUCK:
-			inst.action = multiAction.C_DUCK
-		break;
-	
-		case multiAction.C_STOP:
-			inst.action = multiAction.C_STOP
-		break;
-	
-		case multiAction.C_NAME:
-			inst.name = buffer_read(buff, buffer_string)
-		break;
-	}*/
 	
 }
