@@ -10,19 +10,19 @@ buffer_seek(CLIENT_DATA_BUFFER, buffer_seek_start, 0)
 */
 
 if (keyboard_check(vk_right)) {
-	buffer_write(CLIENT_DATA_BUFFER,buffer_s16, multiAction.C_RIGHT)
+	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_RIGHT)
 }
 
 if (keyboard_check(vk_left)) {
-	buffer_write(CLIENT_DATA_BUFFER,buffer_s16, multiAction.C_LEFT)
+	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_LEFT)
 }
 
 if (keyboard_check(vk_up)) {
-	buffer_write(CLIENT_DATA_BUFFER,buffer_s16, multiAction.C_JUMP)
+	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_JUMP)
 }
 
 if (keyboard_check(vk_down)) {
-	buffer_write(CLIENT_DATA_BUFFER,buffer_s16, multiAction.C_DUCK)
+	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_DUCK)
 }
 
 

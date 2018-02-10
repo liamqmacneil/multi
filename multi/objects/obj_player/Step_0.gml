@@ -1,5 +1,5 @@
-while (ds_queue_size(CLIENT_ACTION_QUEUE) > 0) {
-	var action = ds_queue_dequeue(CLIENT_ACTION_QUEUE)
+while (ds_queue_size(CLIENT_DATA_QUEUE) > 0) {
+	var action = ds_queue_dequeue(CLIENT_DATA_QUEUE)
 	switch (action) {
 		case multiAction.C_RIGHT:
 			hsp+=2;

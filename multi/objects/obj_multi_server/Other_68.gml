@@ -20,7 +20,7 @@ if (server = eventId) {
 	var sock = async_load[? "id"]
 	var inst = clients[? sock]
 	var buff = async_load[? "buffer"] //Get data
-	var queID = inst.CLIENT_ACTION_QUEUE
+	var queID = inst.CLIENT_DATA_QUEUE
 	var actionNum = buffer_read(buff, buffer_s16) //Read data
 
 	for (var i = 0; i < actionNum; i++) {
