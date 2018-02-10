@@ -17,35 +17,41 @@ if (server = eventId) {
 		instance_destroy(inst)
 	}
 }else { //It's client data oh no
-var sock = async_load[? "id"]
-var inst = clients[? sock]
-var buff = async_load[? "buffer"] //Get data
-var cmd = buffer_read(buff, buffer_s16) //Read data
+	var sock = async_load[? "id"]
+	var inst = clients[? sock]
+	var buff = async_load[? "buffer"] //Get data
+	var queID = inst.CLIENT_ACTION_QUEUE
+	var actionNum = buffer_read(buff, buffer_s16) //Read data
 
-switch (cmd) {
-	case multiAction.C_LEFT:
-		inst.action = multiAction.C_LEFT
-	break;
+	for (var i = 0; i < actionNum; i++) {
+		ds_queue_enqueue(queID,buffer_read(buff,buffer_s16))
+	}
+
+
+	/*switch (cmd) {
+		case multiAction.C_LEFT:
+			inst.action = multiAction.C_LEFT
+		break;
 	
-	case multiAction.C_RIGHT:
-		inst.action = multiAction.C_RIGHT
-	break;
+		case multiAction.C_RIGHT:
+			inst.action = multiAction.C_RIGHT
+		break;
 	
-	case multiAction.C_JUMP:
-		inst.action = multiAction.C_JUMP
-	break;
+		case multiAction.C_JUMP:
+			inst.action = multiAction.C_JUMP
+		break;
 	
-	case multiAction.C_DUCK:
-		inst.action = multiAction.C_DUCK
-	break;
+		case multiAction.C_DUCK:
+			inst.action = multiAction.C_DUCK
+		break;
 	
-	case multiAction.C_STOP:
-		inst.action = multiAction.C_STOP
-	break;
+		case multiAction.C_STOP:
+			inst.action = multiAction.C_STOP
+		break;
 	
-	case multiAction.C_NAME:
-		inst.name = buffer_read(buff, buffer_string)
-	break;
-}
+		case multiAction.C_NAME:
+			inst.name = buffer_read(buff, buffer_string)
+		break;
+	}*/
 	
 }
