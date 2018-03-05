@@ -28,8 +28,8 @@ if (keyboard_check(vk_down)) {
 
 buffer_write(CLIENT_DATA_BUFFER, buffer_s16, ds_queue_size(CLIENT_DATA_QUEUE))
 
-buffer_write(CLIENT_DATA_BUFFER, buffer_s32, mouse_x)
-buffer_write(CLIENT_DATA_BUFFER, buffer_s32, mouse_y)
+buffer_write(CLIENT_DATA_BUFFER, buffer_s16, mouse_x)
+buffer_write(CLIENT_DATA_BUFFER, buffer_s16, mouse_y)
 
 show_debug_message(ds_queue_size(CLIENT_DATA_QUEUE))
 

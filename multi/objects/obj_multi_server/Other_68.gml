@@ -32,8 +32,8 @@ if (server = eventId) {
 	*/
 	
 	var actionNum = buffer_read(buff, buffer_s16) //Read data
-	inst.mX = buffer_read(buff, buffer_s32)
-	inst.mY = buffer_read(buff, buffer_s32)
+	inst.mX = buffer_read(buff, buffer_s16)
+	inst.mY = buffer_read(buff, buffer_s16)
 
 	for (var i = 0; i < actionNum; i++) {
 		ds_queue_enqueue(queID,buffer_read(buff,buffer_s16))
