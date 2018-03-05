@@ -6,7 +6,7 @@ if (server = eventId) {
 	if (type = network_type_connect) {
 		var sock = async_load[? "socket"] //Get client ID
 		var ip	 = async_load[? "ip"]	  //Get client ip
-		var iid  = instance_create_layer(0,0,"players",obj_player)
+		var iid  = instance_create_layer(10,10,"players",obj_player)
 		ds_map_add(clients, sock, iid);
 	}
 
@@ -21,10 +21,23 @@ if (server = eventId) {
 	var inst = clients[? sock]
 	var buff = async_load[? "buffer"] //Get data
 	var queID = inst.CLIENT_DATA_QUEUE
+	/*
+		Client Movement Packet Stack
+		
+		1. Number of actions (movements, sprint, acting, etc)
+		2. Player mouse x
+		3. Player mouse y
+		4. Queued actions
+	
+	*/
+	
 	var actionNum = buffer_read(buff, buffer_s16) //Read data
+	inst.mX = buffer_read(buff, buffer_s32)
+	inst.mY = buffer_read(buff, buffer_s32)
 
 	for (var i = 0; i < actionNum; i++) {
 		ds_queue_enqueue(queID,buffer_read(buff,buffer_s16))
 	}
+	
 	
 }

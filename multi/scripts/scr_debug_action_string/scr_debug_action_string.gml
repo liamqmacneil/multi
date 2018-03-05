@@ -11,11 +11,11 @@ switch (act) {
 	
 		return "STATE: left"
 	
-	case multiAction.C_JUMP:
+	case multiAction.C_UP:
 	
 		return "SATE: JUMP"
 	
-	case multiAction.C_DUCK:
+	case multiAction.C_DOWN:
 	
 		return "STATE: DUCK"
 	

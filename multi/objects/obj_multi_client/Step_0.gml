@@ -19,15 +19,20 @@ if (keyboard_check(vk_left)) {
 }
 
 if (keyboard_check(vk_up)) {
-	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_JUMP)
+	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_UP)
 }
 
 if (keyboard_check(vk_down)) {
-	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_DUCK)
+	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_DOWN)
 }
 
 buffer_write(CLIENT_DATA_BUFFER, buffer_s16, ds_queue_size(CLIENT_DATA_QUEUE))
+
+buffer_write(CLIENT_DATA_BUFFER, buffer_s32, mouse_x)
+buffer_write(CLIENT_DATA_BUFFER, buffer_s32, mouse_y)
+
 show_debug_message(ds_queue_size(CLIENT_DATA_QUEUE))
+
 for (var i = 0; i < ds_queue_size(CLIENT_DATA_QUEUE); i++) {
 	buffer_write(CLIENT_DATA_BUFFER, buffer_s16, ds_queue_dequeue(CLIENT_DATA_QUEUE))
 	show_debug_message(i)
