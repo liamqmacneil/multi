@@ -26,16 +26,28 @@ if (keyboard_check(vk_down)) {
 	ds_queue_enqueue(CLIENT_DATA_QUEUE,	multiAction.C_DOWN)
 }
 
+if (mouse_check_button_pressed(mb_left)) {
+	ds_queue_enqueue(CLIENT_DATA_QUEUE, multiAction.C_FIRE)
+}
+
+
+
 buffer_write(CLIENT_DATA_BUFFER, buffer_s16, ds_queue_size(CLIENT_DATA_QUEUE))
 
 buffer_write(CLIENT_DATA_BUFFER, buffer_s16, mouse_x)
 buffer_write(CLIENT_DATA_BUFFER, buffer_s16, mouse_y)
 
-show_debug_message(ds_queue_size(CLIENT_DATA_QUEUE))
-
-for (var i = 0; i < ds_queue_size(CLIENT_DATA_QUEUE); i++) {
+show_debug_message("CLIENT_DATA_QUEUE SIZE"+string(ds_queue_size(CLIENT_DATA_QUEUE)))
+var file, actionCnt = 0
+while (ds_queue_size(CLIENT_DATA_QUEUE > 0)) {
 	buffer_write(CLIENT_DATA_BUFFER, buffer_s16, ds_queue_dequeue(CLIENT_DATA_QUEUE))
-	show_debug_message(i)
+	actionCnt++
 }
+
+show_debug_message("Times Added "+string(actionCnt))
+scr_clientLog(actionCnt)
+
+
+
 
 network_send_packet(client, CLIENT_DATA_BUFFER, buffer_tell(CLIENT_DATA_BUFFER))

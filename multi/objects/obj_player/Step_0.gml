@@ -2,19 +2,19 @@ while (ds_queue_size(CLIENT_DATA_QUEUE) > 0) {
 	var action = ds_queue_dequeue(CLIENT_DATA_QUEUE)
 	switch (action) {
 		case multiAction.C_RIGHT:
-			hsp=2;
+			x+=2;
 		break;
 	
 		case multiAction.C_LEFT:
-			hsp=-2;
+			x-=2;
 		break
 	
 		case multiAction.C_UP:
-			vsp=2;
+			y-=2;
 		break;
 		
 		case multiAction.C_DOWN:
-			vsp=-2;
+			y+=2;
 		break;
 		
 		case multiAction.C_FIRE:
@@ -26,5 +26,6 @@ while (ds_queue_size(CLIENT_DATA_QUEUE) > 0) {
 
 	x+=hsp
 	y+=vsp
-	image_angle = point_direction(x,y,mX,mY)
 }
+
+image_angle = point_direction(x,y,mX,mY)

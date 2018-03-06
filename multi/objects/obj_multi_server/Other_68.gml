@@ -32,6 +32,8 @@ if (server = eventId) {
 	*/
 	
 	var actionNum = buffer_read(buff, buffer_s16) //Read data
+	scr_serverLog(actionNum)
+	show_debug_message(string(actionNum))
 	inst.mX = buffer_read(buff, buffer_s16)
 	inst.mY = buffer_read(buff, buffer_s16)
 
