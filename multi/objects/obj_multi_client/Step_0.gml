@@ -39,6 +39,7 @@ buffer_write(CLIENT_DATA_BUFFER, buffer_s16, mouse_y)
 
 show_debug_message("CLIENT_DATA_QUEUE SIZE"+string(ds_queue_size(CLIENT_DATA_QUEUE)))
 var file, actionCnt = 0
+
 while (ds_queue_size(CLIENT_DATA_QUEUE > 0)) {
 	buffer_write(CLIENT_DATA_BUFFER, buffer_s16, ds_queue_dequeue(CLIENT_DATA_QUEUE))
 	actionCnt++
